@@ -1,0 +1,18 @@
+/*
+ * main.c
+ *
+ *  Created on: Oct 20, 2023
+ *      Author: 20109
+ */
+#include "lcd.h"
+#include "ultrasonic.h"
+
+
+int main(void){
+	Ultrasonic_init();
+	LCD_init();
+	while(1){
+
+	}
+}
+

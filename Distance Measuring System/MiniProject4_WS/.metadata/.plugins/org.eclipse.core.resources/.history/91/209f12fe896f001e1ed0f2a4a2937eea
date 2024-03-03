@@ -1,0 +1,30 @@
+/*
+ * main.c
+ *
+ *  Created on: Oct 20, 2023
+ *      Author: 20109
+ */
+#include "lcd.h"
+#include "ultrasonic.h"
+
+
+
+int main(void){
+	uint16 Distance;
+	Ultrasonic_init();
+	LCD_init();
+	LCD_displayString("Distance=");
+	LCD_moveCursor(0,14);
+	LCD_displayString("cm");
+	asm("SEI");
+
+	while(1){
+		Distance=Ultrasonic_readDistance();
+		LCD_moveCursor(0,10);
+		LCD_intgerToString(Distance);
+		LCD_displayString(" ");
+
+
+	}
+}
+
